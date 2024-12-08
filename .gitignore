@@ -5,3 +5,7 @@ __pycache__/
 /multirun/
 wandb
 .ipynb_checkpoints
+ragfit-env
+ragfit.egg-info
+cache_*json
+pubmed*jsonl

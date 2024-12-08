@@ -1,8 +1,12 @@
 model:
     _target_: ragfit.models.hf.HFTrain
     model_name_or_path: microsoft/Phi-3-mini-128k-instruct
-    load_in_4bit: false
-    load_in_8bit: true
+    # load_in_4bit: false
+    # load_in_8bit: true
+    quantization_config:
+        _target_: transformers.BitsAndBytesConfig
+        load_in_8bit: true
+
     torch_dtype:
     device_map:
     trust_remote_code: true
@@ -55,4 +59,4 @@ hfhub_tag:
 use_wandb:
 experiment:
 wandb_entity:
-
+dev_split: 0.1
